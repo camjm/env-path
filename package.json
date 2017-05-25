@@ -1,0 +1,25 @@
+{
+  "name": "env-path",
+  "version": "0.0.1",
+  "description": "Get info about the path environment variable",
+  "license": "MIT",
+  "author": {
+    "name": "camjm"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "env",
+    "path",
+    "environment",
+    "variable",
+    "main"
+  ]
+}
