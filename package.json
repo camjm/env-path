@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Get info about the path environment variable",
   "license": "MIT",
+  "repository": "camjm/env-path",
   "author": {
     "name": "camjm"
   },
@@ -12,14 +13,16 @@
   "scripts": {
     "test": "xo && ava"
   },
-  "files": [
-    "index.js"
-  ],
+  "main": "index.js",
   "keywords": [
     "env",
     "path",
     "environment",
     "variable",
     "main"
-  ]
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  }
 }

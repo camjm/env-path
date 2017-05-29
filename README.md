@@ -1,4 +1,5 @@
 # env-path
+Get info about the path environment variable.
 
 ## Background
 PATH is an environment variable that specifies a set of directories where executable programs are located. When a command is entered in a command shell, the directories in the PATH variable will be searched, from left to right, looking for an executable with a matching filename. Once a matching executable file is found, a new child process is spawned to run it.
