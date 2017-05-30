@@ -23,6 +23,6 @@
   ],
   "devDependencies": {
     "ava": "*",
-    "xo": "*"
+    "eslint": "^3.19.0"
   }
 }

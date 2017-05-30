@@ -10,4 +10,7 @@ promise.then((array) => {
     depth: null
   });
   console.log(argInfo);
+}).catch(function(err) {
+  console.log('error!');
+  console.log(err);
 });
