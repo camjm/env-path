@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 
-function pathVar () {
+const pathVar = () => {
   var paths = pathVariable();
   var promises = paths.map(pathStats);
   return Promise.all(promises);
@@ -14,10 +14,12 @@ function pathVar () {
 const pathStats = (item) => {
   return new Promise((resolve, reject) => {
     fs.stat(item, (err, stats) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(stats);
+      resolve({
+        path: item,
+        exists: !err,
+        isFile: stats && stats.isFile(),
+        isDirectory: stats && stats.isDirectory()
+      });
     });
   });
 };
@@ -50,26 +52,3 @@ module.exports.pathStats = pathStats;
 module.exports.pathVariable = pathVariable;
 module.exports.pathextVariable = pathextVariable;
 module.exports.pathExecutables = pathExecutables;
-
-
-
-
-// resolve({
-//   path: item,
-//   exists: !err,
-//   isFile: stats && stats.isFile(),
-//   isDirectory: stats && stats.isDirectory()
-// });
-
-
-// var processInfo = util.inspect(process, {
-//   showHidden: true,
-//   colors: true,
-//   depth: null
-// });
-
-//console.log(processInfo);
-
-// var cwd = process.cwd();
-// console.log(util.format('Common Working Directory: %s', cwd));
-// console.log('********************');

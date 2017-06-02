@@ -1,9 +1,11 @@
-var envPath = require('./index');
+'use strict';
+
+const util = require('util');
+const envPath = require('./index');
 
 var promise = envPath.pathVar();
 
 promise.then((array) => {
-  console.log('done!');
   var argInfo = util.inspect(array, {
     showHidden: true,
     colors: true,
@@ -11,6 +13,5 @@ promise.then((array) => {
   });
   console.log(argInfo);
 }).catch(function(err) {
-  console.log('error!');
   console.log(err);
 });
