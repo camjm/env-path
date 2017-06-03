@@ -3,16 +3,20 @@
 // Imports
 const fs = require('fs');
 const path = require('path');
-const util = require('util');
 
-const pathVar = () => {
+const pathVar = (callback) => {
   var paths = pathVariable();
-  var promises = paths.map(pathStats);
-  return Promise.all(promises);
-}
+  return Promise.all(paths.map(pathStats)).then(function(array) {
+    callback(null, array);
+    return array;
+  }).catch(function(err){
+    callback(err);
+    return err;
+  });
+};
 
 const pathStats = (item) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     fs.stat(item, (err, stats) => {
       resolve({
         path: item,
