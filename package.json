@@ -11,7 +11,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "eslint . || exit 0"
+    "test": "standard && node test.js"
   },
   "main": "index.js",
   "keywords": [
@@ -23,6 +23,6 @@
   ],
   "devDependencies": {
     "ava": "*",
-    "eslint": "^3.19.0"
+    "standard": "^10.0.2"
   }
 }
