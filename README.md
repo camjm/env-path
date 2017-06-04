@@ -1,3 +1,5 @@
+[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 # env-path
 Get info about the path environment variable.
 
